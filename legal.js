@@ -21,10 +21,10 @@ const LEGAL_TEXTS = {
     <h2>Datenschutzerklärung</h2>
     
     <h3>1. Datenschutz auf einen Blick</h3>
-    <p>Diese Website dient als digitale Visitenkarte. Es werden keine Cookies gesetzt, keine Analysedienste genutzt und keine Formulare bereitgestellt.</p>
+    <p>Diese Webseite dient als digitale Visitenkarte. Es werden keine Cookies gesetzt, keine Analysedienste genutzt und keine Formulare bereitgestellt.</p>
 
     <h3>2. Server-Logfiles</h3>
-    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die dein Browser automatisch an uns übermittelt (z.B. IP-Adresse, Datum und Uhrzeit des Zugriffs, Dateiname). Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Bereitstellung der Website.</p>
+    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die dein Browser automatisch an uns übermittelt (z.B. IP-Adresse, Datum und Uhrzeit des Zugriffs, Dateiname). Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Bereitstellung der Webseite.</p>
     <p><strong>Hoster</strong><br>netcup GmbH<br>Emmy-Noether-Str. 10, 76131 Karlsruhe<br>Serverstandort: Deutschland</p>
 
     <h3>3. Kontaktaufnahme</h3>
