@@ -215,59 +215,43 @@
       </div>
     </div>
   </main>
-
-  <!-- Legal Modal Window -->
+  
+<!-- Generisches Modal für Rechtliches -->
   <div class="modal" id="legal-modal" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="close-btn" onclick="closeModal()">&times;</button>
-      
-      <div id="modal-impressum" style="display: none;">
-        <h2>Impressum</h2>
-        <p><strong>Angaben gemäß § 5 DDG:</strong></p>
-        <p>
-          Christian Rudatus<br>
-          Kreuzheister 27<br>
-          30900 Wedemark
-        </p>
-        <p>
-          <strong>Kontakt:</strong><br>
-          E-Mail: kontakt@rerora.de<br>
-          Telefon: 015679 124904
-        </p>
-        <p>
-          <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br>
-          s.o.
-        </p>
-      </div>
-
-      <div id="modal-datenschutz" style="display: none;">
-        <h2>Datenschutzerklärung</h2>
-        
-        <h3>1. Datenschutz auf einen Blick</h3>
-        <p>Diese Website dient als digitale Visitenkarte. Es werden keine Cookies gesetzt, keine Analysedienste genutzt und keine Formulare bereitgestellt.</p>
-
-        <h3>2. Server-Logfiles</h3>
-        <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die dein Browser automatisch an uns übermittelt (z. B. IP-Adresse, Datum/Uhrzeit des Zugriffs, Dateiname). Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Bereitstellung der Website.</p>
-
-        <h3>3. Kontaktaufnahme</h3>
-        <p>Wenn du uns per E-Mail kontaktierst, wird deine Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, E-Mail, Anfrage) zum Zwecke der Bearbeitung deines Anliegens bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).</p>
-
-        <h3>4. Deine Rechte</h3>
-        <p>Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung oder Löschung dieser Daten.</p>
+      <div id="modal-legal-body">
+        <!-- Hier wird der Inhalt dynamisch nachgeladen -->
       </div>
     </div>
   </div>
 
   <script>
-    function openModal(type) {
-      document.getElementById('modal-impressum').style.display = type === 'impressum' ? 'block' : 'none';
-      document.getElementById('modal-datenschutz').style.display = type === 'datenschutz' ? 'block' : 'none';
+    // Cache, damit der Text nur einmalig geladen werden muss
+    const legalCache = {};
+
+    async function openModal(type) {
+      const modalBody = document.getElementById('modal-legal-body');
+      const filename = type === 'impressum' ? '/impressum-content.html' : '/datenschutz-content.html';
+
+      if (!legalCache[type]) {
+        try {
+          const response = await fetch(filename);
+          if (!response.ok) throw new Error('Netzwerk-Fehler');
+          legalCache[type] = await response.text();
+        } catch (error) {
+          legalCache[type] = '<p>Inhalt konnte leider nicht geladen werden.</p>';
+        }
+      }
+
+      modalBody.innerHTML = legalCache[type];
       document.getElementById('legal-modal').classList.add('active');
     }
 
-    function closeModal(e) {
+    function closeModal() {
       document.getElementById('legal-modal').classList.remove('active');
     }
   </script>
+  
 </body>
 </html>
