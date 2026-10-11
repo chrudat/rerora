@@ -220,31 +220,23 @@
   <div class="modal" id="legal-modal" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <button class="close-btn" onclick="closeModal()">&times;</button>
-      <div id="modal-legal-body">
-        <!-- Hier wird der Inhalt dynamisch nachgeladen -->
-      </div>
+      <div id="modal-legal-body"></div>
     </div>
   </div>
 
+  <!-- Zentrale Rechtstexte laden -->
+  <script src="legal.js"></script>
+
   <script>
-    // Cache, damit der Text nur einmalig geladen werden muss
-    const legalCache = {};
-
-    async function openModal(type) {
+    function openModal(type) {
       const modalBody = document.getElementById('modal-legal-body');
-      const filename = type === 'impressum' ? '/impressum-content.html' : '/datenschutz-content.html';
-
-      if (!legalCache[type]) {
-        try {
-          const response = await fetch(filename);
-          if (!response.ok) throw new Error('Netzwerk-Fehler');
-          legalCache[type] = await response.text();
-        } catch (error) {
-          legalCache[type] = '<p>Inhalt konnte leider nicht geladen werden.</p>';
-        }
+      
+      if (typeof LEGAL_TEXTS !== 'undefined' && LEGAL_TEXTS[type]) {
+        modalBody.innerHTML = LEGAL_TEXTS[type];
+      } else {
+        modalBody.innerHTML = '<p>Inhalt konnte leider nicht geladen werden.</p>';
       }
 
-      modalBody.innerHTML = legalCache[type];
       document.getElementById('legal-modal').classList.add('active');
     }
 
