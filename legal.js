@@ -25,7 +25,7 @@ const LEGAL_TEXTS = {
 
     <h3>2. Server-Logfiles</h3>
     <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die dein Browser automatisch an uns übermittelt (z. B. IP-Adresse, Datum/Uhrzeit des Zugriffs, Dateiname). Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Bereitstellung der Website.</p>
-    <p><strong>Hoster</strong><br>netcup GmbH, Emmy-Noether-Str. 10, 76131 Karlsruhe<br>Serverstandort: DE</p>
+    <p><strong>Hoster</strong><br>netcup GmbH, Emmy-Noether-Str. 10, 76131 Karlsruhe<br>Serverstandort: Deutschland</p>
 
     <h3>3. Kontaktaufnahme</h3>
     <p>Wenn du uns per E-Mail kontaktierst, wird deine Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung deines Anliegens bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).</p>
