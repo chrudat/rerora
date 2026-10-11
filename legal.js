@@ -29,7 +29,7 @@ const LEGAL_TEXTS = {
     <h3>3. Kontaktaufnahme</h3>
     <p>Wenn du uns per E-Mail kontaktierst, wird deine Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung deines Anliegens bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).</p>
 
-    <h3>4. Ihre Rechte</h3>
+    <h3>4. Deine Rechte</h3>
     <p>Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung oder Löschung dieser Daten.</p>
   `
 };
