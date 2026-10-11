@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>RERORA – Services für deine Feier</title>
+  <meta name="description"
+        content="RERORA kommt zurück. Services & Begleitung für deine Feier – persönlich, unkompliziert und direkt vor Ort.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 36px 24px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      width: 50%;
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(27px, 7vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      margin: 20px 0 28px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .info-text {
+      margin: 0 auto 30px;
+      max-width: 310px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .contacts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact {
+      display: inline-block;
+      padding: 14px 16px;
+      border: 1px solid #222;
+      border-radius: 9px;
+      color: #171717;
+      text-decoration: none;
+      font-size: 16px;
+      overflow-wrap: anywhere;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .contact:hover {
+      background: #171717;
+      color: #fff;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .legal-links {
+      margin-top: 16px;
+      font-size: 12px;
+    }
+
+    .legal-links button {
+      background: none;
+      border: none;
+      color: #777;
+      text-decoration: underline;
+      padding: 0;
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    .legal-links button:hover {
+      color: #171717;
+    }
+
+    /* --- Accordion Style --- */
+    .legal-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+      opacity: 0;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #555;
+      text-align: left;
+    }
+
+    .legal-content.open {
+      max-height: 600px; /* Bietet genug Platz für den auszuklappenden Text */
+      opacity: 1;
+      margin-top: 16px;
+    }
+
+    .legal-content hr {
+      border: 0;
+      border-top: 1px solid #eee;
+      margin: 16px 0;
+    }
+
+    .legal-content h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 10px 0;
+      color: #171717;
+    }
+
+    .legal-content h3 {
+      font-size: 12px;
+      margin: 12px 0 4px 0;
+      color: #171717;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <img src="logo_rerora.jpg" alt="RERORA Logo" class="logo">
+
+    <h1>RERORA<br>KOMMT ZURÜCK.</h1>
+
+    <div class="subtitle">
+      MOMENTE. EMOTIONEN. ERINNERUNGEN.
+    </div>
+
+    <p class="info-text">
+      Der passende Service für dein Event oder deine Feier.<br><br>
+      <strong>Neues Konzept. Bewährter Name.<br>Demnächst hier.</strong>
+    </p>
+
+<!--
+    <div class="contacts">
+      <a class="contact" href="mailto:kontakt@rerora.de">
+        Anfrage senden
+      </a>
+    </div>
+-->
+
+    <div class="footer">
+      Persönlich. Unkompliziert. Direkt vor Ort.
+      
+      <div class="legal-links">
+        <button onclick="toggleLegal('impressum')">Impressum</button> | 
+        <button onclick="toggleLegal('datenschutz')">Datenschutz</button>
+      </div>
+
+      <!-- Ausklappbarer Rechtsbereich direkt in der Card -->
+      <div id="legal-accordion" class="legal-content">
+        <hr>
+        
+        <div id="acc-impressum" style="display: none;">
+          <h2>Impressum</h2>
+          <p><strong>Angaben gemäß § 5 DDG:</strong></p>
+          <p>
+            [Dein Vor- und Nachname]<br>
+            [Straße und Hausnummer]<br>
+            [PLZ und Ort]
+          </p>
+          <p>
+            <strong>Kontakt:</strong><br>
+            E-Mail: kontakt@rerora.de<br>
+            Telefon: [Deine Telefonnummer]
+          </p>
+          <p>
+            <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br>
+            [Dein Vor- und Nachname]<br>
+            [Anschrift wie oben]
+          </p>
+        </div>
+
+        <div id="acc-datenschutz" style="display: none;">
+          <h2>Datenschutzerklärung</h2>
+          
+          <h3>1. Datenschutz auf einen Blick</h3>
+          <p>Diese Website dient als digitale Visitenkarte. Es werden keine Cookies gesetzt, keine Analysedienste genutzt und keine Formulare bereitgestellt.</p>
+
+          <h3>2. Server-Logfiles</h3>
+          <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die dein Browser automatisch an uns übermittelt (z. B. IP-Adresse, Datum/Uhrzeit des Zugriffs, Dateiname). Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch fehlerfreien Bereitstellung der Website.</p>
+
+          <h3>3. Kontaktaufnahme</h3>
+          <p>Wenn du uns per E-Mail kontaktierst, wird deine Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung deines Anliegens bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).</p>
+
+          <h3>4. Ihre Rechte</h3>
+          <p>Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung oder Löschung dieser Daten.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentOpen = null;
+
+    function toggleLegal(type) {
+      const container = document.getElementById('legal-accordion');
+      const imp = document.getElementById('acc-impressum');
+      const ds = document.getElementById('acc-datenschutz');
+
+      if (currentOpen === type) {
+        // Schließen, wenn derselbe Button erneut geklickt wird
+        container.classList.remove('open');
+        currentOpen = null;
+      } else {
+        // Inhalt umschalten und Accordion öffnen
+        imp.style.display = type === 'impressum' ? 'block' : 'none';
+        ds.style.display = type === 'datenschutz' ? 'block' : 'none';
+        container.classList.add('open');
+        currentOpen = type;
+      }
+    }
+  </script>
+</body>
+</html>
