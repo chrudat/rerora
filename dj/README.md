@@ -1,1 +1,1 @@
-<img src="logo_dj" width="250">
+<img src="logo_dj.jpg" width="250">
