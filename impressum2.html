@@ -1,0 +1,38 @@
+<style>
+  .legal-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-size: 13px;
+    color: #555;
+    text-align: left;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  
+  .legal-content.open {
+    max-height: 200px; /* Reicht für kurze Angaben */
+  }
+</style>
+
+<!-- Im Footer der Card: -->
+<div class="footer">
+  Persönlich. Unkompliziert. Direkt vor Ort.
+  <div class="legal-links" style="margin-top: 16px;">
+    <a onclick="toggleImpressum()">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+  
+  <div id="impressum-box" class="legal-content">
+    <hr style="border:0; border-top:1px solid #eee; margin: 12px 0;">
+    <strong>Impressum</strong><br>
+    [Vor- & Nachname]<br>
+    [Adresse]<br>
+    E-Mail: kontakt@rerora.de
+  </div>
+</div>
+
+<script>
+  function toggleImpressum() {
+    document.getElementById('impressum-box').classList.toggle('open');
+  }
+</script>
