@@ -9,7 +9,7 @@ const LEGAL_TEXTS = {
     </p>
     <p>
       <strong>Kontakt:</strong><br>
-      E-Mail: kontakt@rerora.de<br>
+      E-Mail: info@rerora.de<br>
       Telefon: 015679 124904
       </p>
     <p>
